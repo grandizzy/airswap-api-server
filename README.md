@@ -29,6 +29,5 @@ curl -X POST \
    -d '{
    "makerTokens": ["0xcc1cbd4f67cceb7c001bd4adf98451237a193ff8"],
    "takerTokens": ["0x0000000000000000000000000000000000000000"]
-
  }'
 ```

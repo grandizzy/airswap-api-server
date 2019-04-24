@@ -1,0 +1,24 @@
+version: "3.2"
+services:
+  api-server:
+    image: makerdao/airswap-api-server
+    build:
+      context: api-server
+    container_name: airswap-api-server
+    env_file:
+      - .env
+    ports:
+      - "5005:5005"
+    command: >
+      bash -c "PRIVATE_KEY=$${PRIVATE_KEY} MAINNET=0 node server.js"
+
+  order-server:
+    image: makerdao/airswap-order-server
+    build:
+      context: order-server
+    container_name: airswap-order-server
+    ports:
+      - "5004:5004"
+    command: >
+      bash -c "npm start"
+
